@@ -1,5 +1,99 @@
-<html>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+<html lang="en">
+
+<head>
+    <title>Hello World</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <button onclick="updateGoodMorning()">New Greetings</button>
+    <br><br>
+    <p id="good-morning"></p>
+</body>
+
+<script>
+    function gWordsArray() {
+        return [
+            "globalism",
+            "grizzly",
+            "gingerroot",
+            "gingivectomy",
+            "generic",
+            "generalship",
+            "grumble",
+            "gobbledegooks",
+            "gerontocracies",
+            "gouache",
+            "gateway",
+            "generalist",
+            "gladiator",
+            "geomorphologies",
+            "ganglion",
+            "genuine",
+            "guideway",
+            "garage",
+            "grammaticalness",
+            "giveaway",
+            "grumpy",
+            "gramicidins",
+            "gopher",
+            "gaff",
+            "grasshoppers",
+            "glorification",
+            "growl",
+            "greatheartedly"
+        ]
+    }
+    function mWordsArray() {
+        return [
+            "micromanage",
+            "millennium",
+            "miscalculate",
+            "misanthropic",
+            "monoclonal",
+            "madeleine",
+            "maidenlinesses",
+            "medieval",
+            "metaplasia",
+            "metrology",
+            "mismatch",
+            "mammography",
+            "macroevolutions",
+            "mononucleosis",
+            "modest",
+            "mad",
+            "melodramatize",
+            "misleading",
+            "mineralogy",
+            "manifesto",
+            "miracle",
+            "maladminister",
+            "maladaptive",
+            "mineable",
+            "monocrystalline",
+            "mozzarella",
+            "microanatomies",
+            "maritime"
+        ]
+    }
+    function selectedWord(letterWords) {
+        return letterWords[Math.floor((Math.random() * letterWords.length))];
+    }
+
+    function updateGoodMorning(selectedGWord, selectedMWord) {
+        const gWords = gWordsArray();
+        const mWords = mWordsArray();
+
+        selectedGWord = selectedWord(gWords);
+        selectedMWord = selectedWord(mWords);
+
+        document.getElementById("good-morning").innerHTML = `${selectedGWord} ${selectedMWord}`;
+    }
+</script>
+
 </html>
